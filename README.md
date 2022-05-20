@@ -17,29 +17,10 @@ Antes de Executar o projeto localmente é necessário certificar que há um banc
 Caso seja necessário alterar a conexão no arquivo:
     pecaagora\config\db.php
 
-
-
-DIRECTORY STRUCTURE
--------------------
-
-      assets/             contains assets definition
-      commands/           contains console commands (controllers)
-      config/             contains application configurations
-      controllers/        contains Web controller classes
-      mail/               contains view files for e-mails
-      models/             contains model classes
-      runtime/            contains files generated during runtime
-      tests/              contains various tests for the basic application
-      vendor/             contains dependent 3rd-party packages
-      views/              contains view files for the Web application
-      web/                contains the entry script and Web resources
-
-
-
 REQUIREMENTS
 ------------
-PHP 5.6.0.
-PostgreSQL 
+PHP >= 5.6.0.
+PostgreSQL > 10 
 
 
 GUIA DE INSTALAÇÃO
@@ -65,3 +46,20 @@ Iniciar Servidor da Aplicação
 ~~~
 php yii serve
 ~~~
+
+
+
+DIRECTORY STRUCTURE
+-------------------
+
+      assets/             contains assets definition
+      commands/           contains console commands (controllers)
+      config/             contains application configurations
+      controllers/        contains Web controller classes
+      mail/               contains view files for e-mails
+      models/             contains model classes
+      runtime/            contains files generated during runtime
+      tests/              contains various tests for the basic application
+      vendor/             contains dependent 3rd-party packages
+      views/              contains view files for the Web application
+      web/                contains the entry script and Web resources
