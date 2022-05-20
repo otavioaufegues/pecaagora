@@ -7,6 +7,7 @@ Yii 2
 O Projeto contém os dois desafios acessíveis pelo menu de navegação superior.
 
 Antes de Executar o projeto localmente é necessário certificar que há um banco de dados PostgreSQL instalado e verificar suas credenciais. O projeto está com a conexão padrão do PostgreSQL:
+
     ~~~
     'dsn' => 'pgsql:host=localhost;port=5432;dbname=postgres',
     'username' => 'postgres',
