@@ -41,7 +41,7 @@ AppAsset::register($this);
             'items' => [
                 ['label' => 'Home', 'url' => ['/site/index']],
                 ['label' => 'Desafio 1', 'url' => ['/funcionario/index']],
-                ['label' => 'Desafio 2', 'url' => ['/site/about']],
+                ['label' => 'Desafio 2', 'url' => ['/produto']],
             ],
         ]);
         NavBar::end();
