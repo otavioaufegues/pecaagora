@@ -8,11 +8,11 @@ O Projeto contém os dois desafios acessíveis pelo menu de navegação superior
 
 Antes de Executar o projeto localmente é necessário certificar que há um banco de dados PostgreSQL instalado e verificar suas credenciais. O projeto está com a conexão padrão do PostgreSQL:
 
-    ~~~
+    
     'dsn' => 'pgsql:host=localhost;port=5432;dbname=postgres',
     'username' => 'postgres',
     'password' => '123456',
-    ~~~
+    
 
 Caso seja necessário alterar a conexão no arquivo:
     pecaagora\config\db.php
