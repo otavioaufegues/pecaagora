@@ -95,6 +95,7 @@ class FuncionarioController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $cargos = Cargo::find()->all();
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -102,6 +103,7 @@ class FuncionarioController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'cargos' => $cargos
         ]);
     }
 

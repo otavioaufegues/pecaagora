@@ -50,6 +50,6 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
 
     <div class="form-group">
-        <?= Html::a('Adicionar Cargos', ['/cargo/index'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Gerenciar Cargos', ['/cargo/index'], ['class' => 'btn btn-success']) ?>
     </div>
 </div>
