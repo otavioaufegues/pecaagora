@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -28,10 +29,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'complemento')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'cargo_id')->textInput() ?>
+    <?= $form->field($model, 'cargo_id')->dropDownList(ArrayHelper::map($cargos, 'id', 'nome')); ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Salvar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

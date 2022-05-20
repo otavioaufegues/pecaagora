@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Cargo;
 use app\models\Funcionario;
 use app\models\FuncionarioSearch;
 use yii\web\Controller;
@@ -68,6 +69,7 @@ class FuncionarioController extends Controller
     public function actionCreate()
     {
         $model = new Funcionario();
+        $cargos = Cargo::find()->all();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -79,6 +81,7 @@ class FuncionarioController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'cargos' => $cargos
         ]);
     }
 
