@@ -22,7 +22,6 @@ REQUIREMENTS
 PHP >= 5.6.0.
 PostgreSQL > 10 
 
-
 GUIA DE INSTALAÇÃO
 ------------
 
@@ -33,11 +32,17 @@ git clone https://github.com/otavioaufegues/pecaagora.git
 
 Instalar dependências 
 ~~~
+cd pecaagora
 composer install
 ~~~
 
 Após verificar conexão com banco de Dados
 Executar Migrations
+
+*As seguintes extenções do php.ini devem estar habilitadas para executar as migrations
+extension=pdo_pgsql
+extension=pgsql
+
 ~~~
 php yii migrate
 ~~~
