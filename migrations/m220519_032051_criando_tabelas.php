@@ -34,6 +34,17 @@ class m220519_032051_criando_tabelas extends Migration
         $this->batchInsert('cargo', [
             'nome'
         ], [['Gerente'], ['Vendedor'], ['Estagiário']]);
+
+        $this->insert('funcionario', [
+            'nome' => "João Silva",
+            'cpf' => "65450881061",
+            'logradouro' => "Avenida Brasil",
+            'cep' => "36036130",
+            'cidade' => "Juiz de Fora",
+            'estado' => "MG",
+            'numero' => "12",
+            'complemento' => "507 B",
+        ]);
     }
 
     /**
