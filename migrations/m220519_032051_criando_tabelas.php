@@ -26,10 +26,27 @@ class m220519_032051_criando_tabelas extends Migration
             'cargo_id' => Schema::TYPE_INTEGER . ' NOT NULL DEFAULT 1',
         ]);
 
+        $this->createIndex(
+            'idx-funcionario-cargo_id',
+            'funcionario',
+            'cargo_id'
+        );
+
         $this->createTable('cargo', [
             'id' => Schema::TYPE_PK,
             'nome' => Schema::TYPE_STRING . ' NOT NULL',
         ]);
+
+        $this->addForeignKey(
+            'fk-funcionario-cargo_id',
+            'funcionario',
+            'cargo_id',
+            'cargo',
+            'id',
+            'CASCADE'
+        );
+
+
 
         $this->batchInsert('cargo', [
             'nome'
@@ -52,9 +69,20 @@ class m220519_032051_criando_tabelas extends Migration
      */
     public function safeDown()
     {
-        echo "m220519_032051_criando_tabelas cannot be reverted.\n";
-        $this->delete('noticias', ['id' => 1]);
-        $this->dropTable('noticias');
+        $this->dropForeignKey(
+            'fk-funcionario-cargo_id',
+            'funcionario'
+        );
+
+        // drops index for column `author_id`
+        $this->dropIndex(
+            'idx-funcionario-cargo_id',
+            'funcionario'
+        );
+
+
+        $this->dropTable('funcionario');
+        $this->dropTable('cargo');
     }
 
     /*

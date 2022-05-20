@@ -9,6 +9,8 @@ use Yii;
  *
  * @property int $id
  * @property string $nome
+ *
+ * @property Funcionario[] $funcionarios
  */
 class Cargo extends \yii\db\ActiveRecord
 {
@@ -40,5 +42,15 @@ class Cargo extends \yii\db\ActiveRecord
             'id' => 'ID',
             'nome' => 'Nome',
         ];
+    }
+
+    /**
+     * Gets query for [[Funcionarios]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getFuncionarios()
+    {
+        return $this->hasMany(Funcionario::className(), ['cargo_id' => 'id']);
     }
 }

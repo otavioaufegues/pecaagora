@@ -3,7 +3,6 @@
 namespace app\models;
 
 use Yii;
-use yiibr\brvalidator\CpfValidator;
 
 /**
  * This is the model class for table "funcionario".
@@ -18,6 +17,8 @@ use yiibr\brvalidator\CpfValidator;
  * @property string|null $numero
  * @property string|null $complemento
  * @property int $cargo_id
+ *
+ * @property Cargo $cargo
  */
 class Funcionario extends \yii\db\ActiveRecord
 {
@@ -36,11 +37,10 @@ class Funcionario extends \yii\db\ActiveRecord
     {
         return [
             [['nome'], 'required'],
-            [['cargo_id'], 'default', 'value' => 0],
+            [['cargo_id'], 'default', 'value' => null],
             [['cargo_id'], 'integer'],
-            [['nome', 'logradouro', 'cep', 'cidade', 'estado', 'numero', 'complemento'], 'string', 'max' => 255],
-            ['cpf', 'string', 'max' => 11],
-            ['cpf', CpfValidator::className()],
+            [['nome', 'cpf', 'logradouro', 'cep', 'cidade', 'estado', 'numero', 'complemento'], 'string', 'max' => 255],
+            [['cargo_id'], 'exist', 'skipOnError' => true, 'targetClass' => Cargo::className(), 'targetAttribute' => ['cargo_id' => 'id']],
         ];
     }
 
@@ -57,9 +57,19 @@ class Funcionario extends \yii\db\ActiveRecord
             'cep' => 'Cep',
             'cidade' => 'Cidade',
             'estado' => 'Estado',
-            'numero' => 'Número',
+            'numero' => 'Numero',
             'complemento' => 'Complemento',
-            'cargo_id' => 'Cargo',
+            'cargo_id' => 'Cargo ID',
         ];
+    }
+
+    /**
+     * Gets query for [[Cargo]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCargo()
+    {
+        return $this->hasOne(Cargo::className(), ['id' => 'cargo_id']);
     }
 }

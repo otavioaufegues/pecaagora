@@ -38,7 +38,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'estado',
             'numero',
             'complemento',
-            'cargo_id',
+            [
+                'label' => 'Cargo',
+                'value' => $model->getCargo(),
+            ]
         ],
     ]) ?>
 
