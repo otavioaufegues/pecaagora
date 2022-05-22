@@ -79,7 +79,6 @@ use yii\widgets\ActiveForm;
                         $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
 
                             if (!("erro" in dados)) {
-                                alert(dados.logradouro);
                                 //Atualiza os campos com os valores da consulta.
                                 $("#funcionario-logradouro").val(dados.logradouro);
                                 $("#funcionario-cidade").val(dados.localidade);
