@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yiibr\brvalidator\CpfValidator;
 
 /**
  * This is the model class for table "funcionario".
@@ -39,7 +40,9 @@ class Funcionario extends \yii\db\ActiveRecord
             [['nome'], 'required'],
             [['cargo_id'], 'default', 'value' => null],
             [['cargo_id'], 'integer'],
-            [['nome', 'cpf', 'logradouro', 'cep', 'cidade', 'estado', 'numero', 'complemento'], 'string', 'max' => 255],
+            [['nome', 'logradouro', 'cep', 'cidade', 'estado', 'numero', 'complemento'], 'string', 'max' => 255],
+            [['cpf'], 'string', 'max' => 11],
+            ['cpf', CpfValidator::className()],
             [['cargo_id'], 'exist', 'skipOnError' => true, 'targetClass' => Cargo::className(), 'targetAttribute' => ['cargo_id' => 'id']],
         ];
     }
@@ -57,9 +60,9 @@ class Funcionario extends \yii\db\ActiveRecord
             'cep' => 'Cep',
             'cidade' => 'Cidade',
             'estado' => 'Estado',
-            'numero' => 'Numero',
+            'numero' => 'Número',
             'complemento' => 'Complemento',
-            'cargo_id' => 'Cargo ID',
+            'cargo_id' => 'Cargo',
         ];
     }
 
