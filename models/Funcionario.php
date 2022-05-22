@@ -37,7 +37,7 @@ class Funcionario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome'], 'required'],
+            [['nome', 'cpf'], 'required'],
             [['cargo_id'], 'default', 'value' => null],
             [['cargo_id'], 'integer'],
             [['nome', 'logradouro', 'cep', 'cidade', 'estado', 'numero', 'complemento'], 'string', 'max' => 255],
