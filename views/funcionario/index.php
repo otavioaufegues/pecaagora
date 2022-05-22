@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'estado',
             //'numero',
             //'complemento',
-            //'cargo_id',
+            'cargo.nome',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Funcionario $model, $key, $index, $column) {
