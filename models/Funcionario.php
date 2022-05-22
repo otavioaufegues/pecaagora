@@ -40,8 +40,9 @@ class Funcionario extends \yii\db\ActiveRecord
             [['nome', 'cpf'], 'required'],
             [['cargo_id'], 'default', 'value' => null],
             [['cargo_id'], 'integer'],
-            [['nome', 'logradouro', 'cep', 'cidade', 'estado', 'numero', 'complemento'], 'string', 'max' => 255],
+            [['nome', 'logradouro', 'cidade', 'estado', 'numero', 'complemento'], 'string', 'max' => 255],
             [['cpf'], 'string', 'max' => 11],
+            [['cep'], 'string', 'max' => 8],
             ['cpf', CpfValidator::className()],
             [['cargo_id'], 'exist', 'skipOnError' => true, 'targetClass' => Cargo::className(), 'targetAttribute' => ['cargo_id' => 'id']],
         ];
