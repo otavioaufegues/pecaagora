@@ -48,6 +48,14 @@ $config = [
             'showScriptName' => false,
             'rules' => [],
         ],
+        'formatter' => [
+            'dateFormat' => 'dd/MM/yyyy',
+            'datetimeFormat' => 'dd/MM/yyy H:i',
+            'timeFormat' => 'H:i',
+            'decimalSeparator' => ',',
+            'thousandSeparator' => '.',
+            'currencyCode' => 'R$',
+        ],
     ],
     'params' => $params,
 ];

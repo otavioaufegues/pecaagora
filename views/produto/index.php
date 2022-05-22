@@ -28,8 +28,8 @@ use yii\widgets\ActiveForm;
         <h2><?= $model->title ?></h2>
         <h6><?= $model->id ?></h6>
         <h6>Link: <?= $model->permalink ?></h6>
-        <h6>Link: <?= $model->category_id ?></h6>
-        <h5>Preço: <?= str_replace('.', ',', Yii::$app->formatter->asCurrency($model->price, 'BRL')) ?></h5>
+        <h6>Categoria: <?= $model->category_id ?></h6>
+        <h5>Preço: <?= Yii::$app->formatter->asCurrency($model->price) ?></h5>
         <h5>Quantidade: <?= $model->available_quantity ?></h5>
 
         <img src="<?= $model->thumbnail ?>" alt="<?= $model->title ?>" width="150">
