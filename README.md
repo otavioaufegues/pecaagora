@@ -39,7 +39,7 @@ composer install
 Após verificar conexão com banco de Dados
 Executar Migrations
 
-*As seguintes extenções do php.ini devem estar habilitadas para executar as migrations
+*As seguintes extensões do php.ini devem estar habilitadas para executar as migrations
 extension=pdo_pgsql
 extension=pgsql
 
@@ -47,10 +47,13 @@ extension=pgsql
 php yii migrate
 ~~~
 
+*A extensão ";extension=intl" deve estar comentada. Podendo causar erro no desafio 2
+
 Iniciar Servidor da Aplicação
 ~~~
 php yii serve
 ~~~
+
 
 
 
